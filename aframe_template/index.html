@@ -32,25 +32,29 @@
 
 	<a-entity id="group-obj" position="-1.04 -0.37 -90" rotation="10.010000000000002 11.17011 5.75">
 		<!-- Scene camera -->
-		<a-entity camera look-controls position="0 3 8" wasd-controls="acceleration:900"></a-entity>
-		<a-entit id="safeable"></a-entit>
+		<a-entity camera
+		cursor="rayOrigin: mouse"
+		raycaster="objects: [data-mouse-collidable]"
+		look-controls position="0 3 8" wasd-controls="acceleration:900"></a-entity>
+		<a-entity id="safeable"></a-entity>
 		<!-- Text entity -->
 		<!-- <a-text id="text" position="6 2 -6" font="./fonts/AgrandirVariable-msdf.json"
 			font-image="./fonts/AgrandirVariable-msdf.png" negate="false" width="80"
 			value="asdljaslkdjaskldjasökldjökasldjaksöljdöklsj" color="tomato">
 		</a-text> -->
 		<!-- Video primitive -->
-		<a-sound id="beegees" sound="autoplay: true" src="#music" autoplay ></a-sound>
+		<!-- <a-sound id="beegees" sound="autoplay: true" src="#music" autoplay ></a-sound> -->
+		<!-- <a-entity id="beegees" position="0 0 0" sound="src:#music; autoplay: true distanceModel: exponential;"> -->
 
 		<a-video id="sheeps-walking" scale="2.44917 2.44917 2.44917" src="#rocks-mp4" width="8" height="4.5" position="19.6829 4.64271 -5.65238">
 		</a-video>
 		<a-entity id="bagpack-model" rotation="-0.014323944878270581 3.656616648524914 0.11172677005051053"
-			gltf-model="#bagpack" position="-5.76237 0.97714 -7.00183" scale="1.12519 0.86295 -1.29207">
+			gltf-model="#bagpack" position="-25 0.97714 -7.00183" scale="1.12519 0.86295 -1.29207">
 		</a-entity>
 		<a-entity id="fan" rotation="16.889076927071276 -1.3819742018555456 -2.880831793917779" gltf-model="#anda-glb"
-			position="3.08643 0.23924 -3.84241" scale="0.32262 0.24743 -0.37047">
+			position="7 0.23924 -3.84241" scale="0.32262 0.24743 -0.37047">
 		</a-entity>
-			<a-image height="90" width="90" src="#garden" position="0 10 -30"></a-image>
+			<a-image data-mouse-collidable sound="src:#music; autoplay: true distanceModel: exponential;" height="90" width="90" src="#garden" position="0 10 -30"></a-image>
 	</a-entity>
 
 
