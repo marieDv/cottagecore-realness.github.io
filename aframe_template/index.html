@@ -1,0 +1,64 @@
+<!-- aframe documentation: https://aframe.io/docs/1.0.0/introduction/ -->
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>aframe empty template</title>
+	<script src="./libraries/aframe-1.0.4.min.js"></script>
+	<script src="./libraries/aframe_ply_pointcloud_loader.js"></script>
+</head>
+
+<body>
+	<a-scene background="color: #32a852" vr-mode-ui="enabled: false" loading-screen="enabled: false">
+
+		<!-- pre-load your assets(models, videos, images etc.) here -->
+		<a-assets>
+			<a-asset-item id="anda-glb" src="./models/fan.glb" response-type="arraybuffer"></a-asset-item>
+			<a-asset-item id="bagpack" scale="1.0967 0.84111 -1.25936"
+				rotation="0.05156620156177409 0.38731946950843654 -2.6201359971332545" position="-1.85103 0.23924 -3.84241"
+				src="./models/bagpack.glb" response-type="arraybuffer"></a-asset-item>
+			<a-asset-item id="rock-glb" src="./models/rock-mesh.glb" response-type="arraybuffer"></a-asset-item>
+			<img id="garden" src="./img/birmingham-museums-trust-4lDX-xTLl3Q-unsplash.jpg">
+			<a-asset-item id="rock-ply" src="./models/rock-pointcloud.ply" response-type="arraybuffer"></a-asset-item>
+			<video id="rocks-mp4" muted autoplay loop="true" src="./video/sheep.mp4"></video>
+		</a-assets>
+	<a-entity id="group-obj" position="-1.04 -0.37 -90" rotation="10.010000000000002 11.17011 5.75">
+		<!-- Scene camera -->
+		<a-entity camera look-controls position="0 3 8" wasd-controls="acceleration:900"></a-entity>
+		<a-entit id="safeable"></a-entit>
+		<!-- Text entity -->
+		<!-- <a-text id="text" position="6 2 -6" font="./fonts/AgrandirVariable-msdf.json"
+			font-image="./fonts/AgrandirVariable-msdf.png" negate="false" width="80"
+			value="asdljaslkdjaskldjasökldjökasldjaksöljdöklsj" color="tomato">
+		</a-text> -->
+		<!-- Video primitive -->
+		<a-video src="#rocks-mp4" width="8" height="4.5" position="8 2 -6">
+		</a-video> -->
+		<a-entity id="bagpack-model" rotation="-0.014323944878270581 3.656616648524914 0.11172677005051053"
+			gltf-model="#bagpack" position="-5.76237 0.97714 -7.00183" scale="1.12519 0.86295 -1.29207">
+		</a-entity>
+		<a-entity id="fan" rotation="16.889076927071276 -1.3819742018555456 -2.880831793917779" gltf-model="#anda-glb"
+			position="3.08643 0.23924 -3.84241" scale="0.32262 0.24743 -0.37047">
+		</a-entity>
+
+		
+			<a-image height="50" width="50" src="#garden" position="0 5 -30"></a-image>
+		
+
+
+	</a-entity>
+
+
+
+		<a-entity id="pointlight"
+			light="type: spot; intensity: 6.24; penumbra: 0.08; decay: 6.03; distance: 0; castShadow: true" position="0 5 60">
+		</a-entity>
+
+	</a-scene>
+</body>
+
+</html>
